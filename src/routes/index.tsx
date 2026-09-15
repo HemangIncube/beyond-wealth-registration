@@ -1,9 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, Mic2, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 
-import beyondWealthLogo from "@/assets/beyond-wealth-logo.png";
+import beyondWealthLogo from "@/assets/beyond-wealth-logo-light.png";
 import fiveYearsMark from "@/assets/five-years-mark.png";
 import incubeCapitalLogo from "@/assets/incube-capital-logo.png";
 import { Button } from "@/components/ui/button";
@@ -133,46 +133,105 @@ function BeyondWealthRegistration() {
 
   return (
     <main className="min-h-screen bg-background">
-      <header className="border-b border-border/80 px-5 py-4 sm:px-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5">
-          <img src={incubeCapitalLogo} alt="Incube Capital" className="h-11 w-auto object-contain sm:h-14" />
-          <div className="flex items-center gap-3 border-l border-border pl-4 sm:gap-4 sm:pl-6">
-            <p className="hidden max-w-32 text-right text-[10px] font-semibold uppercase leading-4 tracking-[0.16em] text-muted-foreground sm:block">
-              Celebrating a five-year journey
-            </p>
-            <img src={fiveYearsMark} alt="5 years completed" className="h-14 w-auto object-contain sm:h-16" />
-          </div>
+      <header className="sticky top-0 z-50 border-b border-gold/40 bg-background/95 shadow-ribbon backdrop-blur-md">
+        <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-4 sm:px-8">
+          <a href="#event" aria-label="Beyond Wealth home" className="shrink-0">
+            <img src={incubeCapitalLogo} alt="Incube Capital" className="h-10 w-auto object-contain sm:h-12" />
+          </a>
+          <nav aria-label="Event sections" className="ml-auto min-w-0 overflow-x-auto">
+            <div className="flex w-max items-center gap-5 text-[11px] font-bold uppercase tracking-[0.15em] text-primary sm:gap-8 sm:text-xs">
+              <a href="#event" className="transition-colors hover:text-gold-strong">Event</a>
+              <a href="#about" className="transition-colors hover:text-gold-strong">About</a>
+              <a href="#programme" className="transition-colors hover:text-gold-strong">Programme</a>
+              <a href="#voices" className="transition-colors hover:text-gold-strong">Voices</a>
+              <a href="#register" className="border border-primary bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary">Register</a>
+            </div>
+          </nav>
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl lg:min-h-[calc(100vh-97px)] lg:grid-cols-[0.92fr_1.08fr]">
-        <section className="relative flex flex-col justify-center overflow-hidden border-b border-border px-5 py-12 sm:px-10 lg:border-b-0 lg:border-r lg:px-14 lg:py-16">
-          <div className="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true" />
-          <div className="relative mx-auto w-full max-w-xl lg:mx-0">
-            <p className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-accent-foreground">
-              <span className="h-px w-8 bg-accent" /> An exclusive gathering
-            </p>
-            <img src={beyondWealthLogo} alt="Beyond Wealth — Investment Perspectives, Market Outlook" className="w-full object-contain" />
-            <div className="mt-9 border-t border-border pt-7">
-              <p className="max-w-lg font-display text-2xl leading-snug text-primary sm:text-3xl">
-                An evening of perspectives designed for your family’s financial future.
-              </p>
-              <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-                <ShieldCheck className="size-4 text-success" />
-                <span>Your information will be used only for event registration.</span>
-              </div>
+      <section id="event" className="scroll-mt-20 bg-sky-wash px-5 py-14 sm:px-8 sm:py-20 lg:py-24">
+        <div className="mx-auto flex min-h-[calc(100vh-13rem)] max-w-5xl flex-col items-center justify-center text-center">
+          <div className="mb-9 flex w-full items-center justify-between gap-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary/70 sm:text-xs">Incube Capital presents</p>
+            <img src={fiveYearsMark} alt="5 years completed" className="h-16 w-auto object-contain sm:h-20" />
+          </div>
+          <p className="mb-8 text-xs font-bold uppercase tracking-[0.3em] text-gold-strong">An exclusive gathering</p>
+          <h1 className="sr-only">Beyond Wealth</h1>
+          <img src={beyondWealthLogo} alt="Beyond Wealth — Investment Perspectives, Market Outlook" className="w-full max-w-4xl object-contain" />
+          <div className="my-10 flex w-full max-w-xs items-center gap-4" aria-hidden="true">
+            <span className="h-px flex-1 bg-gold" />
+            <span className="size-2 rotate-45 border border-gold" />
+            <span className="h-px flex-1 bg-gold" />
+          </div>
+          <p className="max-w-2xl font-display text-2xl leading-snug text-primary sm:text-3xl">
+            An afternoon of investment perspectives and market outlooks, created for your family’s financial future.
+          </p>
+          <div className="mt-10 grid w-full max-w-2xl grid-cols-2 border-y border-primary/15 py-6 text-primary">
+            <div className="border-r border-primary/15 px-4">
+              <CalendarDays className="mx-auto mb-2 size-5 text-gold-strong" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]">Sunday, 25 October 2026</span>
+            </div>
+            <div className="px-4">
+              <Clock3 className="mx-auto mb-2 size-5 text-gold-strong" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]">10:30 AM – 1:00 PM</span>
             </div>
           </div>
-        </section>
+          <a href="#about" aria-label="Continue to About the event" className="mt-10 flex size-10 items-center justify-center border border-primary/20 text-primary transition-colors hover:border-gold hover:text-gold-strong">
+            <ArrowDown className="size-4" />
+          </a>
+        </div>
+      </section>
 
-        <section className="flex items-center px-5 py-12 sm:px-10 lg:px-14 lg:py-16">
-          <div className="mx-auto w-full max-w-2xl">
-            <div className="mb-9">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-success">Guest registration</p>
-              <h1 className="mt-3 font-display text-4xl text-primary sm:text-5xl">Reserve your place</h1>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">Please share the attendee details below.</p>
+      <section id="about" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+          <SectionHeading eyebrow="About the event" title="Perspectives beyond the numbers" />
+          <div className="space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
+            <p>Beyond Wealth brings families together for a considered conversation on investment perspectives and the market outlook ahead.</p>
+            <p>Presented as Incube Capital marks five years, the gathering creates space to reflect on the journey so far and look thoughtfully toward long-term financial decisions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-sky-wash px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading eyebrow="Event programme" title="The afternoon, thoughtfully arranged" centered />
+          <div className="mx-auto mt-12 max-w-4xl border-y border-gold/60 py-12 text-center">
+            <CalendarDays className="mx-auto size-7 text-gold-strong" />
+            <p className="mt-5 font-display text-4xl text-primary sm:text-5xl">Coming soon</p>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground">The detailed event schedule will be shared here once it is finalised.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="voices" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading eyebrow="Voices" title="Meet the perspectives shaping the conversation" centered />
+          <div className="mx-auto mt-12 grid max-w-4xl gap-px bg-primary/15 sm:grid-cols-3">
+            {["Market outlook", "Investment perspectives", "Family wealth"].map((topic) => (
+              <div key={topic} className="bg-background px-7 py-12 text-center">
+                <Mic2 className="mx-auto size-6 text-gold-strong" />
+                <p className="mt-5 font-display text-2xl text-primary">Coming soon</p>
+                <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{topic}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto mt-7 max-w-xl text-center text-sm leading-6 text-muted-foreground">Speaker details will be announced soon.</p>
+        </div>
+      </section>
+
+      <section id="register" className="scroll-mt-20 border-t border-primary/10 bg-sky-wash px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+          <div>
+            <SectionHeading eyebrow="Register" title="Reserve your place" />
+            <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">Please share the attendee details below. Fields marked with an asterisk are required.</p>
+            <div className="mt-7 flex items-start gap-3 text-sm leading-6 text-muted-foreground">
+              <ShieldCheck className="mt-0.5 size-4 shrink-0 text-success" />
+              <span>Your information will be used only for event registration.</span>
             </div>
+          </div>
 
+          <div className="border border-primary/15 bg-background p-6 shadow-editorial sm:p-9">
             <form className="space-y-6" onSubmit={submitRegistration} noValidate>
               <Field id="name" label="Name (as per KYC)" error={errors.name}>
                 <Input id="name" name="name" autoComplete="name" placeholder="Enter your full name" maxLength={100} className="h-12" aria-invalid={Boolean(errors.name)} />
@@ -220,14 +279,28 @@ function BeyondWealthRegistration() {
               </div>
 
               {errors.submit && <p role="alert" className="text-sm text-destructive">{errors.submit}</p>}
-              <Button type="submit" size="lg" className="h-13 w-full text-sm sm:w-auto sm:min-w-52" disabled={isSubmitting}>
+              <Button type="submit" size="lg" className="h-13 w-full rounded-none text-sm sm:w-auto sm:min-w-56" disabled={isSubmitting}>
                 {isSubmitting ? "Saving registration…" : "Complete registration"} {!isSubmitting && <ArrowRight />}
               </Button>
             </form>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-gold/40 bg-background px-5 py-8 text-center">
+        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-primary/60">Incube Capital · Beyond Wealth · 1st Edition</p>
+      </footer>
     </main>
+  );
+}
+
+function SectionHeading({ eyebrow, title, centered = false }: { eyebrow: string; title: string; centered?: boolean }) {
+  return (
+    <div className={centered ? "text-center" : undefined}>
+      <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-strong">{eyebrow}</p>
+      <h2 className="mt-4 font-display text-4xl leading-tight text-primary sm:text-5xl">{title}</h2>
+      <div className={centered ? "mx-auto mt-6 h-px w-16 bg-gold" : "mt-6 h-px w-16 bg-gold"} aria-hidden="true" />
+    </div>
   );
 }
 
