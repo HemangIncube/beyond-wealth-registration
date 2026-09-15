@@ -193,7 +193,7 @@ function BeyondWealthRegistration() {
                   <NumberSelect name="members" label="No. of members" min={1} max={20} error={errors.members} />
                   <NumberSelect name="adults" label="Adults" min={1} max={20} />
                   <div className="space-y-2">
-                    <Label htmlFor="kids">Kids <span className="font-normal text-muted-foreground">(optional)</span></Label>
+                    <Label htmlFor="kids">Kids</Label>
                     <Select value={String(kids)} onValueChange={updateKids}>
                       <SelectTrigger id="kids" className="h-12"><SelectValue /></SelectTrigger>
                       <SelectContent>{Array.from({ length: 11 }, (_, i) => <SelectItem key={i} value={String(i)}>{i}</SelectItem>)}</SelectContent>
