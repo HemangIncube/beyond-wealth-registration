@@ -9,6 +9,7 @@ import incubeCapitalLogo from "@/assets/incube-capital-logo.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { saveRegistration } from "@/lib/registration.functions";
 import {
   Select,
   SelectContent,
@@ -56,13 +57,14 @@ const registrationSchema = z
     path: ["ages"],
   });
 
-type FieldErrors = Partial<Record<"name" | "mobile" | "email" | "members" | "adults" | "ages", string>>;
+type FieldErrors = Partial<Record<"name" | "mobile" | "email" | "members" | "adults" | "ages" | "submit", string>>;
 
 function BeyondWealthRegistration() {
   const [kids, setKids] = useState(0);
   const [ages, setAges] = useState<string[]>([]);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submittedName, setSubmittedName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateKids = (value: string) => {
     const count = Number(value);
@@ -74,7 +76,7 @@ function BeyondWealthRegistration() {
     });
   };
 
-  const submitRegistration = (event: FormEvent<HTMLFormElement>) => {
+  const submitRegistration = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const result = registrationSchema.safeParse({
@@ -98,7 +100,15 @@ function BeyondWealthRegistration() {
     }
 
     setErrors({});
-    setSubmittedName(result.data.name.split(" ")[0] ?? result.data.name);
+    setIsSubmitting(true);
+    try {
+      await saveRegistration({ data: result.data });
+      setSubmittedName(result.data.name.split(" ")[0] ?? result.data.name);
+    } catch {
+      setErrors({ submit: "We couldn't save your registration. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submittedName) {
@@ -209,8 +219,9 @@ function BeyondWealthRegistration() {
                 )}
               </div>
 
-              <Button type="submit" size="lg" className="h-13 w-full text-sm sm:w-auto sm:min-w-52">
-                Complete registration <ArrowRight />
+              {errors.submit && <p role="alert" className="text-sm text-destructive">{errors.submit}</p>}
+              <Button type="submit" size="lg" className="h-13 w-full text-sm sm:w-auto sm:min-w-52" disabled={isSubmitting}>
+                {isSubmitting ? "Saving registration…" : "Complete registration"} {!isSubmitting && <ArrowRight />}
               </Button>
             </form>
           </div>
