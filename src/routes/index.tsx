@@ -68,7 +68,10 @@ function BeyondWealthRegistration() {
     const count = Number(value);
     setKids(count);
     setAges((current) => Array.from({ length: count }, (_, index) => current[index] ?? ""));
-    setErrors((current) => ({ ...current, ages: undefined }));
+    setErrors((current) => {
+      const { ages: _ages, ...remaining } = current;
+      return remaining;
+    });
   };
 
   const submitRegistration = (event: FormEvent<HTMLFormElement>) => {
@@ -217,7 +220,7 @@ function BeyondWealthRegistration() {
   );
 }
 
-function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: React.ReactNode }) {
+function Field({ id, label, error, children }: { id: string; label: string; error?: string | undefined; children: React.ReactNode }) {
   return (
     <div className="space-y-2">
       <Label htmlFor={id}>{label} <span className="text-destructive">*</span></Label>
@@ -227,7 +230,7 @@ function Field({ id, label, error, children }: { id: string; label: string; erro
   );
 }
 
-function NumberSelect({ name, label, min, max, error }: { name: string; label: string; min: number; max: number; error?: string }) {
+function NumberSelect({ name, label, min, max, error }: { name: string; label: string; min: number; max: number; error?: string | undefined }) {
   return (
     <div className="space-y-2">
       <Label htmlFor={name}>{label} <span className="text-destructive">*</span></Label>
