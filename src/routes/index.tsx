@@ -133,24 +133,24 @@ function BeyondWealthRegistration() {
   return (
     <main className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 border-b border-gold/40 bg-background/95 shadow-ribbon backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-4 sm:px-8">
+        <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-4 sm:gap-5 sm:px-8">
           <a href="#event" aria-label="Beyond Wealth home" className="shrink-0">
             <img src={incubeCapitalLogo} alt="Incube Capital" className="h-10 w-auto object-contain sm:h-12" />
           </a>
           <nav aria-label="Event sections" className="ml-auto min-w-0 overflow-x-auto">
-            <div className="flex w-max items-center gap-5 text-[11px] font-bold uppercase tracking-[0.15em] text-primary sm:gap-8 sm:text-xs">
-              <a href="#event" className="transition-colors hover:text-gold-strong">Event</a>
+            <div className="flex w-max items-center gap-3 text-[9px] font-bold uppercase tracking-[0.12em] text-primary sm:gap-8 sm:text-xs sm:tracking-[0.15em]">
+              <a href="#event" className="hidden transition-colors hover:text-gold-strong sm:inline">Event</a>
               <a href="#about" className="transition-colors hover:text-gold-strong">About</a>
               <a href="#programme" className="transition-colors hover:text-gold-strong">Programme</a>
               <a href="#voices" className="transition-colors hover:text-gold-strong">Voices</a>
-              <a href="#register" className="border border-primary bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary">Register</a>
+              <a href="#register" className="border border-primary bg-primary px-2.5 py-2 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary sm:px-4 sm:py-2.5">Register</a>
             </div>
           </nav>
         </div>
       </header>
 
       <section id="event" className="scroll-mt-20 bg-background px-5 py-10 sm:px-8 sm:py-14 lg:py-16">
-        <div className="relative mx-auto flex min-h-[calc(100vh-10rem)] max-w-7xl flex-col justify-center overflow-hidden border-y border-border py-12 sm:py-16 lg:py-20">
+        <div className="relative mx-auto flex min-h-[calc(100vh-13rem)] max-w-7xl flex-col justify-center overflow-hidden border-y border-border py-12 sm:py-16 lg:py-20">
           <span className="pointer-events-none absolute -right-10 -top-16 select-none font-display text-[20rem] leading-none text-secondary/70 sm:text-[28rem]" aria-hidden="true">5</span>
 
           <div className="relative z-10 grid items-end gap-14 lg:grid-cols-12 lg:gap-12">
