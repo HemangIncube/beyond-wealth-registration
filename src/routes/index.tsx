@@ -3,7 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, Mic2, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 
-import beyondWealthLogo from "@/assets/beyond-wealth-logo-light.png";
 import fiveYearsMark from "@/assets/five-years-mark.png";
 import incubeCapitalLogo from "@/assets/incube-capital-logo.png";
 import { Button } from "@/components/ui/button";
@@ -134,50 +133,71 @@ function BeyondWealthRegistration() {
   return (
     <main className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 border-b border-gold/40 bg-background/95 shadow-ribbon backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-7xl items-center gap-5 px-4 sm:px-8">
+        <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-4 sm:gap-5 sm:px-8">
           <a href="#event" aria-label="Beyond Wealth home" className="shrink-0">
             <img src={incubeCapitalLogo} alt="Incube Capital" className="h-10 w-auto object-contain sm:h-12" />
           </a>
           <nav aria-label="Event sections" className="ml-auto min-w-0 overflow-x-auto">
-            <div className="flex w-max items-center gap-5 text-[11px] font-bold uppercase tracking-[0.15em] text-primary sm:gap-8 sm:text-xs">
-              <a href="#event" className="transition-colors hover:text-gold-strong">Event</a>
+            <div className="flex w-max items-center gap-3 text-[9px] font-bold uppercase tracking-[0.12em] text-primary sm:gap-8 sm:text-xs sm:tracking-[0.15em]">
+              <a href="#event" className="hidden transition-colors hover:text-gold-strong sm:inline">Event</a>
               <a href="#about" className="transition-colors hover:text-gold-strong">About</a>
               <a href="#programme" className="transition-colors hover:text-gold-strong">Programme</a>
               <a href="#voices" className="transition-colors hover:text-gold-strong">Voices</a>
-              <a href="#register" className="border border-primary bg-primary px-4 py-2.5 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary">Register</a>
+              <a href="#register" className="border border-primary bg-primary px-2.5 py-2 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary sm:px-4 sm:py-2.5">Register</a>
             </div>
           </nav>
         </div>
       </header>
 
-      <section id="event" className="scroll-mt-20 bg-sky-wash px-5 py-14 sm:px-8 sm:py-20 lg:py-24">
-        <div className="mx-auto flex min-h-[calc(100vh-13rem)] max-w-5xl flex-col items-center justify-center text-center">
-          <div className="mb-9 flex w-full items-center justify-between gap-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary/70 sm:text-xs">Incube Capital presents</p>
-            <img src={fiveYearsMark} alt="5 years completed" className="h-16 w-auto object-contain sm:h-20" />
-          </div>
-          <p className="mb-8 text-xs font-bold uppercase tracking-[0.3em] text-gold-strong">An exclusive gathering</p>
-          <h1 className="sr-only">Beyond Wealth</h1>
-          <img src={beyondWealthLogo} alt="Beyond Wealth — Investment Perspectives, Market Outlook" className="w-full max-w-4xl object-contain" />
-          <div className="my-10 flex w-full max-w-xs items-center gap-4" aria-hidden="true">
-            <span className="h-px flex-1 bg-gold" />
-            <span className="size-2 rotate-45 border border-gold" />
-            <span className="h-px flex-1 bg-gold" />
-          </div>
-          <p className="max-w-2xl font-display text-2xl leading-snug text-primary sm:text-3xl">
-            An afternoon of investment perspectives and market outlooks, created for your family’s financial future.
-          </p>
-          <div className="mt-10 grid w-full max-w-2xl grid-cols-2 border-y border-primary/15 py-6 text-primary">
-            <div className="border-r border-primary/15 px-4">
-              <CalendarDays className="mx-auto mb-2 size-5 text-gold-strong" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]">Sunday, 25 October 2026</span>
+      <section id="event" className="scroll-mt-20 bg-background px-5 py-10 sm:px-8 sm:py-14 lg:py-16">
+        <div className="relative mx-auto flex min-h-[calc(100vh-13rem)] max-w-7xl flex-col justify-center overflow-hidden border-y border-border py-12 sm:py-16 lg:py-20">
+          <span className="pointer-events-none absolute -right-10 -top-16 select-none font-display text-[20rem] leading-none text-secondary/70 sm:text-[28rem]" aria-hidden="true">5</span>
+
+          <div className="relative z-10 grid items-end gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="flex flex-col gap-9 lg:col-span-8 lg:gap-12">
+              <div className="flex items-center gap-4">
+                <span className="h-8 w-px bg-accent" aria-hidden="true" />
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">Incube Capital presents</p>
+              </div>
+
+              <div>
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-accent">1st edition · An exclusive gathering</p>
+                <h1 className="font-display text-7xl leading-[0.82] text-primary sm:text-8xl md:text-9xl lg:text-[9.5rem]">
+                  Beyond<br />Wealth
+                </h1>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-primary sm:text-sm">
+                  Investment perspectives <span className="mx-2 text-gold" aria-hidden="true">|</span> Market outlook
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <span className="border border-accent px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-accent sm:text-xs">Five-year anniversary edition</span>
+                <span className="h-px flex-1 bg-border" aria-hidden="true" />
+              </div>
             </div>
-            <div className="px-4">
-              <Clock3 className="mx-auto mb-2 size-5 text-gold-strong" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]">10:30 AM – 1:00 PM</span>
+
+            <div className="flex flex-col gap-8 lg:col-span-4">
+              <img src={fiveYearsMark} alt="5 years completed" className="h-20 w-20 object-contain" />
+              <p className="max-w-sm font-display text-2xl leading-snug text-primary">
+                An afternoon of investment perspectives and market outlooks, created for your family’s financial future.
+              </p>
+              <dl className="grid grid-cols-2 gap-6 border-y border-border py-6 lg:grid-cols-1">
+                <div>
+                  <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><CalendarDays className="size-4" /> Date</dt>
+                  <dd className="text-base font-medium text-primary sm:text-lg">Sunday, 25 October 2026</dd>
+                </div>
+                <div>
+                  <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><Clock3 className="size-4" /> Time</dt>
+                  <dd className="text-base font-medium text-primary sm:text-lg">10:30 AM – 1:00 PM</dd>
+                </div>
+              </dl>
+              <Button asChild size="lg" className="h-13 w-fit rounded-none px-8 uppercase tracking-[0.12em]">
+                <a href="#register">Register now <ArrowRight /></a>
+              </Button>
             </div>
           </div>
-          <a href="#about" aria-label="Continue to About the event" className="mt-10 flex size-10 items-center justify-center border border-primary/20 text-primary transition-colors hover:border-gold hover:text-gold-strong">
+
+          <a href="#about" aria-label="Continue to About the event" className="relative z-10 mt-12 flex size-10 items-center justify-center border border-border text-primary transition-colors hover:border-accent hover:text-accent">
             <ArrowDown className="size-4" />
           </a>
         </div>
@@ -193,7 +213,7 @@ function BeyondWealthRegistration() {
         </div>
       </section>
 
-      <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-sky-wash px-5 py-20 sm:px-8 lg:py-28">
+      <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="Event programme" title="The afternoon, thoughtfully arranged" centered />
           <div className="mx-auto mt-12 max-w-4xl border-y border-gold/60 py-12 text-center">
@@ -220,7 +240,7 @@ function BeyondWealthRegistration() {
         </div>
       </section>
 
-      <section id="register" className="scroll-mt-20 border-t border-primary/10 bg-sky-wash px-5 py-20 sm:px-8 lg:py-28">
+      <section id="register" className="scroll-mt-20 border-t border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <div>
             <SectionHeading eyebrow="Register" title="Reserve your place" />
