@@ -207,8 +207,9 @@ function BeyondWealthRegistration() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
           <SectionHeading eyebrow="About the event" title="Perspectives beyond the numbers" />
           <div className="space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
-            <p>Beyond Wealth brings families together for a considered conversation on investment perspectives and the market outlook ahead.</p>
-            <p>Presented as Incube Capital marks five years, the gathering creates space to reflect on the journey so far and look thoughtfully toward long-term financial decisions.</p>
+            <p>Five years of conviction, clarity, and compounding trust, and this is only the beginning. Beyond Wealth marks Incube Capital's milestone anniversary with an exclusive gathering crafted for those who understand that true wealth is built on perspective, not just portfolios.</p>
+            <p>This inaugural edition takes a deeper look at the journey that shaped Incube Capital, paired with a sharp, forward-looking lens on market dynamics and investment opportunities in an ever-evolving landscape.</p>
+            <p>A conversation designed not just for the informed investor, but for the discerning one, where strategy meets vision, and numbers find their narrative.</p>
           </div>
         </div>
       </section>
