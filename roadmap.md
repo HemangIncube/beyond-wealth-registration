@@ -7,3 +7,5 @@
 - [x] Verify desktop and mobile layouts plus anchored navigation.
 - [x] Recompose the opening as a white editorial event hero instead of a pasted logo panel.
 - [x] Replace the light-blue section theme with a white-led navy system.
+- [x] Match Incube Capital's black typography and green action color.
+- [x] Add the confirmed event programme and speaker lineup with supplied portraits.
