@@ -1,10 +1,13 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, Mic2, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 
 import fiveYearsMark from "@/assets/five-years-mark.png";
 import incubeCapitalLogo from "@/assets/incube-capital-logo.png";
+import debendraRout from "@/assets/debendra-rout.png.asset.json";
+import drShyamBhat from "@/assets/dr-shyam-bhat.png.asset.json";
+import jugalPopat from "@/assets/jugal-popat.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -57,6 +60,20 @@ const registrationSchema = z
   });
 
 type FieldErrors = Partial<Record<"name" | "mobile" | "email" | "members" | "adults" | "ages" | "submit", string>>;
+
+const programme = [
+  { time: "10:15–10:30 AM", title: "Journey of Incube Capital" },
+  { time: "10:30–11:00 AM", title: "Market Outlook" },
+  { time: "11:00 AM–12:00 PM", title: "Purpose of Wealth and Well-being" },
+  { time: "12:00–12:45 PM", title: "Estate Planning" },
+];
+
+const speakers = [
+  { name: "Mr. Debendra Rout", topic: "Journey of Incube Capital", image: debendraRout.url },
+  { name: "Fund Manager", topic: "Market Outlook", image: null },
+  { name: "Dr. Shyam Bhat", topic: "Purpose of Wealth and Well-being", image: drShyamBhat.url },
+  { name: "Jugal Popat", topic: "Estate Planning", image: jugalPopat.url },
+];
 
 function BeyondWealthRegistration() {
   const [kids, setKids] = useState(0);
@@ -138,12 +155,12 @@ function BeyondWealthRegistration() {
             <img src={incubeCapitalLogo} alt="Incube Capital" className="h-10 w-auto object-contain sm:h-12" />
           </a>
           <nav aria-label="Event sections" className="ml-auto min-w-0 overflow-x-auto">
-            <div className="flex w-max items-center gap-3 text-[9px] font-bold uppercase tracking-[0.12em] text-primary sm:gap-8 sm:text-xs sm:tracking-[0.15em]">
-              <a href="#event" className="hidden transition-colors hover:text-gold-strong sm:inline">Event</a>
-              <a href="#about" className="transition-colors hover:text-gold-strong">About</a>
-              <a href="#programme" className="transition-colors hover:text-gold-strong">Programme</a>
-              <a href="#voices" className="transition-colors hover:text-gold-strong">Voices</a>
-              <a href="#register" className="border border-primary bg-primary px-2.5 py-2 text-primary-foreground transition-colors hover:border-gold hover:bg-gold hover:text-primary sm:px-4 sm:py-2.5">Register</a>
+             <div className="flex w-max items-center gap-3 text-[10px] font-medium text-foreground sm:gap-8 sm:text-sm">
+               <a href="#event" className="hidden transition-colors hover:text-brand-green sm:inline">Event</a>
+               <a href="#about" className="transition-colors hover:text-brand-green">About</a>
+               <a href="#programme" className="transition-colors hover:text-brand-green">Programme</a>
+               <a href="#voices" className="transition-colors hover:text-brand-green">Voices</a>
+               <a href="#register" className="bg-brand-green px-2.5 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5">Register</a>
             </div>
           </nav>
         </div>
@@ -157,15 +174,15 @@ function BeyondWealthRegistration() {
             <div className="flex flex-col gap-9 lg:col-span-8 lg:gap-12">
               <div className="flex items-center gap-4">
                 <span className="h-8 w-px bg-accent" aria-hidden="true" />
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary sm:text-sm">Incube Capital presents</p>
+                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground sm:text-sm">Incube Capital presents</p>
               </div>
 
               <div>
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-accent">1st edition · An exclusive gathering</p>
-                <h1 className="font-display text-7xl leading-[0.82] text-primary sm:text-8xl md:text-9xl lg:text-[9.5rem]">
+                 <h1 className="font-display text-7xl leading-[0.82] text-event-ink sm:text-8xl md:text-9xl lg:text-[9.5rem]">
                   Beyond<br />Wealth
                 </h1>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-primary sm:text-sm">
+                 <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-foreground sm:text-sm">
                   Investment perspectives <span className="mx-2 text-gold" aria-hidden="true">|</span> Market outlook
                 </p>
               </div>
@@ -178,17 +195,17 @@ function BeyondWealthRegistration() {
 
             <div className="flex flex-col gap-8 lg:col-span-4">
               <img src={fiveYearsMark} alt="5 years completed" className="h-20 w-20 object-contain" />
-              <p className="max-w-sm font-display text-2xl leading-snug text-primary">
+               <p className="max-w-sm text-2xl leading-snug text-foreground">
                 An afternoon of investment perspectives and market outlooks, created for your family’s financial future.
               </p>
               <dl className="grid grid-cols-2 gap-6 border-y border-border py-6 lg:grid-cols-1">
                 <div>
                   <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><CalendarDays className="size-4" /> Date</dt>
-                  <dd className="text-base font-medium text-primary sm:text-lg">Sunday, 25 October 2026</dd>
+                   <dd className="text-base font-medium text-foreground sm:text-lg">Sunday, 25 October 2026</dd>
                 </div>
                 <div>
                   <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><Clock3 className="size-4" /> Time</dt>
-                  <dd className="text-base font-medium text-primary sm:text-lg">10:30 AM – 1:00 PM</dd>
+                   <dd className="text-base font-medium text-foreground sm:text-lg">10:15 AM – 1:00 PM</dd>
                 </div>
               </dl>
               <Button asChild size="lg" className="h-13 w-fit rounded-none px-8 uppercase tracking-[0.12em]">
@@ -217,10 +234,18 @@ function BeyondWealthRegistration() {
       <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="Event programme" title="The afternoon, thoughtfully arranged" centered />
-          <div className="mx-auto mt-12 max-w-4xl border-y border-gold/60 py-12 text-center">
-            <CalendarDays className="mx-auto size-7 text-gold-strong" />
-            <p className="mt-5 font-display text-4xl text-primary sm:text-5xl">Coming soon</p>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-muted-foreground">The detailed event schedule will be shared here once it is finalised.</p>
+           <div className="mx-auto mt-12 max-w-4xl border-t border-border">
+             {programme.map((item) => (
+               <div key={item.time} className="grid gap-2 border-b border-border py-6 sm:grid-cols-[12rem_1fr] sm:items-center sm:gap-8">
+                 <p className="text-sm font-semibold text-brand-green">{item.time}</p>
+                 <p className="text-xl font-medium text-foreground sm:text-2xl">{item.title}</p>
+               </div>
+             ))}
+             <div className="flex items-center gap-4 py-7">
+               <span className="h-px flex-1 bg-border" aria-hidden="true" />
+               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-green">Followed by lunch</p>
+               <span className="h-px flex-1 bg-border" aria-hidden="true" />
+             </div>
           </div>
         </div>
       </section>
@@ -228,16 +253,21 @@ function BeyondWealthRegistration() {
       <section id="voices" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="Voices" title="Meet the perspectives shaping the conversation" centered />
-          <div className="mx-auto mt-12 grid max-w-4xl gap-px bg-primary/15 sm:grid-cols-3">
-            {["Market outlook", "Investment perspectives", "Family wealth"].map((topic) => (
-              <div key={topic} className="bg-background px-7 py-12 text-center">
-                <Mic2 className="mx-auto size-6 text-gold-strong" />
-                <p className="mt-5 font-display text-2xl text-primary">Coming soon</p>
-                <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">{topic}</p>
+           <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+             {speakers.map((speaker) => (
+               <div key={speaker.topic} className="border-b border-border pb-6 text-center">
+                 {speaker.image ? (
+                   <img src={speaker.image} alt={speaker.name} className="aspect-square w-full object-cover" />
+                 ) : (
+                   <div className="flex aspect-square w-full items-center justify-center bg-secondary text-center">
+                     <span className="max-w-28 text-sm font-medium text-muted-foreground">Speaker to be confirmed</span>
+                   </div>
+                 )}
+                 <p className="mt-5 text-xl font-semibold text-foreground">{speaker.name}</p>
+                 <p className="mt-2 text-sm leading-5 text-muted-foreground">{speaker.topic}</p>
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-7 max-w-xl text-center text-sm leading-6 text-muted-foreground">Speaker details will be announced soon.</p>
         </div>
       </section>
 
@@ -268,7 +298,7 @@ function BeyondWealthRegistration() {
               </div>
 
               <div className="border-y border-border py-6">
-                <p className="mb-5 font-display text-xl text-primary">Attendee details</p>
+                 <p className="mb-5 text-xl font-medium text-foreground">Attendee details</p>
                 <div className="grid gap-5 sm:grid-cols-3">
                   <NumberSelect name="members" label="No. of members" min={1} max={20} error={errors.members} />
                   <NumberSelect name="adults" label="Adults" min={1} max={20} />
@@ -319,7 +349,7 @@ function SectionHeading({ eyebrow, title, centered = false }: { eyebrow: string;
   return (
     <div className={centered ? "text-center" : undefined}>
       <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-strong">{eyebrow}</p>
-      <h2 className="mt-4 font-display text-4xl leading-tight text-primary sm:text-5xl">{title}</h2>
+       <h2 className="mt-4 text-4xl font-normal leading-tight text-foreground sm:text-5xl">{title}</h2>
       <div className={centered ? "mx-auto mt-6 h-px w-16 bg-gold" : "mt-6 h-px w-16 bg-gold"} aria-hidden="true" />
     </div>
   );
