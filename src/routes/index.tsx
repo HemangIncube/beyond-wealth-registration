@@ -135,7 +135,7 @@ function BeyondWealthRegistration() {
             <Check className="size-8" strokeWidth={2} />
           </div>
           <p className="mb-3 font-sans text-xs font-bold uppercase tracking-[0.24em] text-success">Registration received</p>
-          <h1 className="font-display text-4xl text-primary sm:text-5xl">Thank you, {submittedName}.</h1>
+          <h1 className="text-4xl font-normal text-foreground sm:text-5xl">Thank you, {submittedName}.</h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
             Your details for Beyond Wealth have been recorded. We look forward to welcoming you and your family.
           </p>
@@ -168,7 +168,7 @@ function BeyondWealthRegistration() {
 
       <section id="event" className="scroll-mt-20 bg-background px-5 py-10 sm:px-8 sm:py-14 lg:py-16">
         <div className="relative mx-auto flex min-h-[calc(100vh-13rem)] max-w-7xl flex-col justify-center overflow-hidden border-y border-border py-12 sm:py-16 lg:py-20">
-          <span className="pointer-events-none absolute -right-10 -top-16 select-none font-display text-[20rem] leading-none text-secondary/70 sm:text-[28rem]" aria-hidden="true">5</span>
+           <span className="pointer-events-none absolute -right-10 -top-16 select-none text-[20rem] font-light leading-none text-secondary/70 sm:text-[28rem]" aria-hidden="true">5</span>
 
           <div className="relative z-10 grid items-end gap-14 lg:grid-cols-12 lg:gap-12">
             <div className="flex flex-col gap-9 lg:col-span-8 lg:gap-12">
@@ -339,7 +339,7 @@ function BeyondWealthRegistration() {
       </section>
 
       <footer className="border-t border-gold/40 bg-background px-5 py-8 text-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-primary/60">Incube Capital · Beyond Wealth · 1st Edition</p>
+         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-foreground/60">Incube Capital · Beyond Wealth · 1st Edition</p>
       </footer>
     </main>
   );
