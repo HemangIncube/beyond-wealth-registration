@@ -9,3 +9,5 @@
 - [x] Replace the light-blue section theme with a white-led navy system.
 - [x] Match Incube Capital's black typography and green action color.
 - [x] Add the confirmed event programme and speaker lineup with supplied portraits.
+- [x] Swap the anniversary mark to "5 Years of Commitment" and retitle About to "Perspectives beyond the wealth".
+- [x] Replace "afternoon" with "day", reword all speaker cards, and add the Hilton Garden Inn address to the hero.
