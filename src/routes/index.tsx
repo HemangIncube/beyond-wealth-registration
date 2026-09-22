@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowRight, CalendarDays, Check, Clock3, MapPin, ShieldCheck } from "lucide-react";
 import { z } from "zod";
 
 import fiveYearsMark from "@/assets/five-years-mark.png";
@@ -69,10 +69,10 @@ const programme = [
 ];
 
 const speakers = [
-  { name: "Mr. Debendra Rout", topic: "Journey of Incube Capital", image: debendraRout.url },
-  { name: "Fund Manager", topic: "Market Outlook", image: null },
-  { name: "Dr. Shyam Bhat", topic: "Purpose of Wealth and Well-being", image: drShyamBhat.url },
-  { name: "Jugal Popat", topic: "Estate Planning", image: jugalPopat.url },
+  { name: "Mr. Debendra Rout", line: "taking on Journey of Incube Capital", image: debendraRout.url },
+  { name: "Fund Manager", line: "taking on Market Outlook", image: null },
+  { name: "Dr Shyam Bhat", line: "taking on Purpose of Wealth & Well Being", image: drShyamBhat.url },
+  { name: "Jugal Popat", line: "speaking on Estate Planning & Transfer of Wealth", image: jugalPopat.url },
 ];
 
 function BeyondWealthRegistration() {
@@ -194,19 +194,23 @@ function BeyondWealthRegistration() {
             </div>
 
             <div className="flex flex-col gap-8 lg:col-span-4">
-              <img src={fiveYearsMark} alt="5 years completed" className="h-20 w-20 object-contain" />
+              <img src={fiveYearsMark} alt="5 years of commitment" className="h-20 w-20 object-contain" />
                <p className="max-w-sm text-2xl leading-snug text-foreground">
-                An afternoon of investment perspectives and market outlooks, created for your family’s financial future.
+                A day of investment perspectives and market outlooks, created for your family’s financial future.
               </p>
               <dl className="grid grid-cols-2 gap-6 border-y border-border py-6 lg:grid-cols-1">
                 <div>
                   <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><CalendarDays className="size-4" /> Date</dt>
                    <dd className="text-base font-medium text-foreground sm:text-lg">Sunday, 25 October 2026</dd>
                 </div>
-                <div>
-                  <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><Clock3 className="size-4" /> Time</dt>
-                   <dd className="text-base font-medium text-foreground sm:text-lg">10:15 AM – 1:00 PM</dd>
-                </div>
+                 <div>
+                   <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><Clock3 className="size-4" /> Time</dt>
+                    <dd className="text-base font-medium text-foreground sm:text-lg">10:15 AM – 1:00 PM</dd>
+                 </div>
+                 <div className="col-span-2 lg:col-span-1">
+                   <dt className="mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-accent"><MapPin className="size-4" /> Address</dt>
+                    <dd className="text-base font-medium text-foreground sm:text-lg">Hilton Garden Inn, Whitefield, Bangalore, Karnataka, 560048</dd>
+                 </div>
               </dl>
               <Button asChild size="lg" className="h-13 w-fit rounded-none px-8 uppercase tracking-[0.12em]">
                 <a href="#register">Register now <ArrowRight /></a>
@@ -222,7 +226,7 @@ function BeyondWealthRegistration() {
 
       <section id="about" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
-          <SectionHeading eyebrow="About the event" title="Perspectives beyond the numbers" />
+          <SectionHeading eyebrow="About the event" title="Perspectives beyond the wealth" />
           <div className="space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
             <p>Five years of conviction, clarity, and compounding trust, and this is only the beginning. Beyond Wealth marks Incube Capital's milestone anniversary with an exclusive gathering crafted for those who understand that true wealth is built on perspective, not just portfolios.</p>
             <p>This inaugural edition takes a deeper look at the journey that shaped Incube Capital, paired with a sharp, forward-looking lens on market dynamics and investment opportunities in an ever-evolving landscape.</p>
@@ -233,7 +237,7 @@ function BeyondWealthRegistration() {
 
       <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow="Event programme" title="The afternoon, thoughtfully arranged" centered />
+          <SectionHeading eyebrow="Event programme" title="The day, thoughtfully arranged" centered />
            <div className="mx-auto mt-12 max-w-4xl border-t border-border">
              {programme.map((item) => (
                <div key={item.time} className="grid gap-2 border-b border-border py-6 sm:grid-cols-[12rem_1fr] sm:items-center sm:gap-8">
@@ -254,17 +258,17 @@ function BeyondWealthRegistration() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="Voices" title="Meet the perspectives shaping the conversation" centered />
            <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-             {speakers.map((speaker) => (
-               <div key={speaker.topic} className="border-b border-border pb-6 text-center">
-                 {speaker.image ? (
-                   <img src={speaker.image} alt={speaker.name} className="aspect-square w-full object-cover" />
-                 ) : (
-                   <div className="flex aspect-square w-full items-center justify-center bg-secondary text-center">
-                     <span className="max-w-28 text-sm font-medium text-muted-foreground">Speaker to be confirmed</span>
-                   </div>
-                 )}
-                 <p className="mt-5 text-xl font-semibold text-foreground">{speaker.name}</p>
-                 <p className="mt-2 text-sm leading-5 text-muted-foreground">{speaker.topic}</p>
+              {speakers.map((speaker) => (
+                <div key={speaker.name} className="border-b border-border pb-6 text-center">
+                  {speaker.image ? (
+                    <img src={speaker.image} alt={speaker.name} className="aspect-square w-full object-cover" />
+                  ) : (
+                    <div className="flex aspect-square w-full items-center justify-center bg-secondary text-center">
+                      <span className="max-w-28 text-sm font-medium text-muted-foreground">Speaker to be confirmed</span>
+                    </div>
+                  )}
+                  <p className="mt-5 text-xl font-semibold text-foreground">{speaker.name}</p>
+                  <p className="mt-2 text-sm leading-5 text-muted-foreground">{speaker.line}</p>
               </div>
             ))}
           </div>
