@@ -11,7 +11,7 @@
 - [x] Add the confirmed event programme and speaker lineup with supplied portraits.
 - [x] Swap the anniversary mark to "5 Years of Commitment" and retitle About to "Perspectives beyond the wealth".
 - [x] Replace "afternoon" with "day", reword all speaker cards, and add the Hilton Garden Inn address to the hero.
-- [ ] Restyle the programme, About, and speaker sections in the selected editorial direction.
-- [ ] Add Niranjan Avasthi with the supplied portrait and biography.
-- [ ] Update the opening copy, enlarge the commitment mark, and add the investment disclaimer.
-- [ ] Verify the refreshed page on desktop and mobile.
+- [x] Restyle the programme, About, and speaker sections in the selected editorial direction.
+- [x] Add Niranjan Avasthi with the supplied portrait and biography.
+- [x] Update the opening copy, enlarge the commitment mark, and add the investment disclaimer.
+- [x] Verify the refreshed page on desktop and mobile.
