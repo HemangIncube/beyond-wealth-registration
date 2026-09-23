@@ -15,3 +15,4 @@
 - [x] Add Niranjan Avasthi with the supplied portrait and biography.
 - [x] Update the opening copy, enlarge the commitment mark, and add the investment disclaimer.
 - [x] Verify the refreshed page on desktop and mobile.
+- [ ] Replace About imagery with face-free, high-stakes corporate scenes and verify the result.
