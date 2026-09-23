@@ -5,9 +5,13 @@ import { z } from "zod";
 
 import fiveYearsMark from "@/assets/five-years-mark.png";
 import incubeCapitalLogo from "@/assets/incube-capital-logo.png";
+import aboutTrust from "@/assets/about-trust.jpg";
+import aboutGrowth from "@/assets/about-growth.jpg";
+import aboutConversation from "@/assets/about-conversation.jpg";
 import debendraRout from "@/assets/debendra-rout.png.asset.json";
 import drShyamBhat from "@/assets/dr-shyam-bhat.png.asset.json";
 import jugalPopat from "@/assets/jugal-popat.png.asset.json";
+import niranjanAvasthi from "@/assets/niranjan-avasthi.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -62,17 +66,42 @@ const registrationSchema = z
 type FieldErrors = Partial<Record<"name" | "mobile" | "email" | "members" | "adults" | "ages" | "submit", string>>;
 
 const programme = [
-  { time: "10:15–10:30 AM", title: "Journey of Incube Capital" },
-  { time: "10:30–11:00 AM", title: "Market Outlook" },
-  { time: "11:00 AM–12:00 PM", title: "Purpose of Wealth and Well-being" },
-  { time: "12:00–12:45 PM", title: "Estate Planning" },
+  { time: "10:15–10:30 AM", title: "Journey of Incube Capital", speaker: "Mr. Debendra Rout" },
+  { time: "10:30–11:00 AM", title: "Market Outlook", speaker: "Niranjan Avasthi" },
+  { time: "11:00 AM–12:00 PM", title: "Purpose of Wealth & Well-Being", speaker: "Dr. Shyam K Bhat" },
+  { time: "12:00–12:45 PM", title: "Estate Planning", speaker: "Mr. Jugal Popat" },
+  { time: "12:45 PM onwards", title: "Lunch & Conversations", speaker: "Hosted by Incube Capital" },
 ];
 
 const speakers = [
-  { name: "Mr. Debendra Rout", line: "taking on Journey of Incube Capital", image: debendraRout.url },
-  { name: "Fund Manager", line: "taking on Market Outlook", image: null },
-  { name: "Dr Shyam Bhat", line: "taking on Purpose of Wealth & Well Being", image: drShyamBhat.url },
-  { name: "Jugal Popat", line: "speaking on Estate Planning & Transfer of Wealth", image: jugalPopat.url },
+  {
+    name: "Mr. Debendra Rout",
+    role: "Founder, Incube Capital",
+    line: "Journey of Incube Capital · 10:15 AM",
+    image: debendraRout.url,
+    bio: "Founder of Incube Capital, with extensive experience across investment distribution, financial services, and multiple market cycles. His strengths span portfolio management, asset allocation, and bespoke goal-based investment planning.",
+  },
+  {
+    name: "Niranjan Avasthi",
+    role: "Author, Mango Millionaire · President, Edelweiss Asset Management Ltd.",
+    line: "Market Outlook · 10:30 AM",
+    image: niranjanAvasthi.url,
+    bio: "A finance leader and author credited with engineering one of the most remarkable growth stories in India’s mutual fund industry. With over two decades in asset management, he scaled Edelweiss AMC’s AUM from Rs. 6,000 crore to over Rs. 1,75,000 crore, taking the firm from 26th position to among India’s top 15 mutual fund houses. He is the architect of BHARAT Bond ETF, India’s first Bond ETF, and a pioneer of the Target Maturity Fund category. A qualified Cost and Management Accountant and Pune University rank holder, he serves on the AMFI ETF Committee and multiple SEBI sub-committees. He is co-author of Mango Millionaire, which simplifies personal finance for the everyday investor.",
+  },
+  {
+    name: "Dr. Shyam K Bhat",
+    role: "Psychiatrist & Integrative Medicine Specialist",
+    line: "Purpose of Wealth & Well-Being · 11:00 AM",
+    image: drShyamBhat.url,
+    bio: "A psychiatrist, psychotherapist, and integrative medicine specialist regarded as a pioneer of holistic psychiatry in India. US board certified in Psychiatry, Internal Medicine, and Psychosomatic Medicine, he founded the Mind-Body Clinic, Seraniti, and Nirvikalpa: The Centre for Human Potential.",
+  },
+  {
+    name: "Mr. Jugal Popat",
+    role: "Co-founder, WillJini",
+    line: "Estate Planning & Transfer of Wealth · 12:00 PM",
+    image: jugalPopat.url,
+    bio: "Co-founder of WillJini and a pioneer of online will writing in India. Since 2014, the firm has supported more than 15,000 families across 480+ cities and 30+ countries with wills, private family trusts, and inheritance assistance.",
+  },
 ];
 
 function BeyondWealthRegistration() {
@@ -182,9 +211,7 @@ function BeyondWealthRegistration() {
                  <h1 className="font-display text-7xl leading-[0.82] text-event-ink sm:text-8xl md:text-9xl lg:text-[9.5rem]">
                   Beyond<br />Wealth
                 </h1>
-                 <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-foreground sm:text-sm">
-                  Investment perspectives <span className="mx-2 text-gold" aria-hidden="true">|</span> Market outlook
-                </p>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-foreground sm:text-sm">Inaugural event of Incube Capital</p>
               </div>
 
               <div className="flex items-center gap-5">
@@ -194,9 +221,9 @@ function BeyondWealthRegistration() {
             </div>
 
             <div className="flex flex-col gap-8 lg:col-span-4">
-              <img src={fiveYearsMark} alt="5 years of commitment" className="h-20 w-20 object-contain" />
+               <img src={fiveYearsMark} alt="5 years of commitment" className="h-32 w-40 object-contain sm:h-40 sm:w-48" />
                <p className="max-w-sm text-2xl leading-snug text-foreground">
-                A day of investment perspectives and market outlooks, created for your family’s financial future.
+                 A day of meaningful conversations on Wealth &amp; Well-being, thoughtfully curated exclusively for our clients.
               </p>
               <dl className="grid grid-cols-2 gap-6 border-y border-border py-6 lg:grid-cols-1">
                 <div>
@@ -212,8 +239,8 @@ function BeyondWealthRegistration() {
                     <dd className="text-base font-medium text-foreground sm:text-lg">Hilton Garden Inn, Whitefield, Bangalore, Karnataka, 560048</dd>
                  </div>
               </dl>
-              <Button asChild size="lg" className="h-13 w-fit rounded-none px-8 uppercase tracking-[0.12em]">
-                <a href="#register">Register now <ArrowRight /></a>
+               <Button asChild size="lg" className="h-13 w-fit rounded-none px-8 uppercase tracking-[0.12em]">
+                 <a href="#register">Reserve my seat <ArrowRight /></a>
               </Button>
             </div>
           </div>
@@ -224,52 +251,51 @@ function BeyondWealthRegistration() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
-          <SectionHeading eyebrow="About the event" title="Perspectives beyond the wealth" />
-          <div className="space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
-            <p>Five years of conviction, clarity, and compounding trust, and this is only the beginning. Beyond Wealth marks Incube Capital's milestone anniversary with an exclusive gathering crafted for those who understand that true wealth is built on perspective, not just portfolios.</p>
-            <p>This inaugural edition takes a deeper look at the journey that shaped Incube Capital, paired with a sharp, forward-looking lens on market dynamics and investment opportunities in an ever-evolving landscape.</p>
-            <p>A conversation designed not just for the informed investor, but for the discerning one, where strategy meets vision, and numbers find their narrative.</p>
-          </div>
+       <section id="about" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
+         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+           <div>
+             <SectionHeading eyebrow="About the gathering" title="Perspectives beyond the wealth" />
+             <div className="mt-8 space-y-5 text-base leading-8 text-muted-foreground sm:text-lg">
+               <p>Five years of conviction, clarity, and compounding trust, and this is only the beginning. Beyond Wealth marks Incube Capital's milestone anniversary with an exclusive gathering crafted for those who understand that true wealth is built on perspective, not just portfolios.</p>
+               <p>This inaugural edition takes a deeper look at the journey that shaped Incube Capital, paired with a sharp, forward-looking lens on market dynamics and investment opportunities in an ever-evolving landscape.</p>
+               <p>A conversation designed not just for the informed investor, but for the discerning one, where strategy meets vision, and numbers find their narrative.</p>
+             </div>
+           </div>
+           <div className="grid grid-cols-2 gap-3" aria-label="Wealth, growth, and meaningful conversations">
+             <img src={aboutTrust} alt="A trusted financial conversation" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full rounded-md object-cover" />
+             <img src={aboutGrowth} alt="Long-term growth and stewardship" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full rounded-md object-cover" />
+             <img src={aboutConversation} alt="Guests connecting through meaningful conversation" loading="lazy" width={1408} height={704} className="col-span-2 aspect-[2/1] w-full rounded-md object-cover" />
+           </div>
         </div>
       </section>
 
-      <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow="Event programme" title="The day, thoughtfully arranged" centered />
-           <div className="mx-auto mt-12 max-w-4xl border-t border-border">
+       <section id="programme" className="scroll-mt-20 border-y border-primary/10 bg-secondary/45 px-5 py-20 sm:px-8 lg:py-28">
+         <div className="mx-auto max-w-6xl">
+           <SectionHeading eyebrow="Agenda" title="Sunday, 25 October 2026" centered />
+            <div className="mx-auto mt-14 max-w-5xl border-t border-border">
              {programme.map((item) => (
-               <div key={item.time} className="grid gap-2 border-b border-border py-6 sm:grid-cols-[12rem_1fr] sm:items-center sm:gap-8">
-                 <p className="text-sm font-semibold text-brand-green">{item.time}</p>
-                 <p className="text-xl font-medium text-foreground sm:text-2xl">{item.title}</p>
+                <div key={item.time} className="grid gap-3 border-b border-border py-7 transition-colors hover:bg-background sm:grid-cols-[11rem_1fr_13rem] sm:items-baseline sm:gap-8 sm:px-6">
+                  <p className="text-sm font-semibold text-brand-green">{item.time}</p>
+                  <p className="font-display text-xl text-event-ink sm:text-2xl">{item.title}</p>
+                  <p className="text-sm text-muted-foreground sm:text-right sm:italic">{item.speaker}</p>
                </div>
              ))}
-             <div className="flex items-center gap-4 py-7">
-               <span className="h-px flex-1 bg-border" aria-hidden="true" />
-               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-green">Followed by lunch</p>
-               <span className="h-px flex-1 bg-border" aria-hidden="true" />
-             </div>
           </div>
         </div>
       </section>
 
       <section id="voices" className="scroll-mt-20 bg-background px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-6xl">
-          <SectionHeading eyebrow="Voices" title="Meet the perspectives shaping the conversation" centered />
-           <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+           <SectionHeading eyebrow="The voices in the room" title="Speakers" centered />
+            <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-2">
               {speakers.map((speaker) => (
-                <div key={speaker.name} className="border-b border-border pb-6 text-center">
-                  {speaker.image ? (
-                    <img src={speaker.image} alt={speaker.name} className="aspect-square w-full object-cover" />
-                  ) : (
-                    <div className="flex aspect-square w-full items-center justify-center bg-secondary text-center">
-                      <span className="max-w-28 text-sm font-medium text-muted-foreground">Speaker to be confirmed</span>
-                    </div>
-                  )}
-                  <p className="mt-5 text-xl font-semibold text-foreground">{speaker.name}</p>
-                  <p className="mt-2 text-sm leading-5 text-muted-foreground">{speaker.line}</p>
-              </div>
+                 <article key={speaker.name} className="flex flex-col border border-border bg-background p-6 sm:p-8">
+                   <img src={speaker.image} alt={speaker.name} loading="lazy" width={500} height={500} className="size-20 rounded-full border-2 border-background object-cover shadow-editorial" />
+                   <h3 className="mt-6 font-display text-2xl text-event-ink">{speaker.name}</h3>
+                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-green">{speaker.role}</p>
+                   <p className="mt-5 flex-1 text-sm leading-7 text-muted-foreground">{speaker.bio}</p>
+                   <p className="mt-7 border-t border-border pt-4 text-xs font-medium text-muted-foreground">{speaker.line}</p>
+                 </article>
             ))}
           </div>
         </div>
@@ -342,8 +368,9 @@ function BeyondWealthRegistration() {
         </div>
       </section>
 
-      <footer className="border-t border-gold/40 bg-background px-5 py-8 text-center">
-         <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-foreground/60">Incube Capital · Beyond Wealth · 1st Edition</p>
+       <footer className="border-t border-gold/40 bg-background px-5 py-8 text-center">
+          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-foreground/60">Incube Capital · Beyond Wealth · 1st Edition</p>
+          <p className="mx-auto mt-4 max-w-3xl text-[10px] leading-5 text-muted-foreground">Mutual fund investments are subject to market risks. Read all scheme-related documents carefully.</p>
       </footer>
     </main>
   );
@@ -353,7 +380,7 @@ function SectionHeading({ eyebrow, title, centered = false }: { eyebrow: string;
   return (
     <div className={centered ? "text-center" : undefined}>
       <p className="text-xs font-bold uppercase tracking-[0.24em] text-gold-strong">{eyebrow}</p>
-       <h2 className="mt-4 text-4xl font-normal leading-tight text-foreground sm:text-5xl">{title}</h2>
+       <h2 className="mt-4 font-display text-4xl font-normal leading-tight text-event-ink sm:text-5xl">{title}</h2>
       <div className={centered ? "mx-auto mt-6 h-px w-16 bg-gold" : "mt-6 h-px w-16 bg-gold"} aria-hidden="true" />
     </div>
   );
